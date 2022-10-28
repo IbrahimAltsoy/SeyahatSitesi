@@ -31,7 +31,7 @@ namespace SeyahatSitesi.Controllers
         public IActionResult Index()
         {
             // Video 21 de girdiği sınıfa buradan işlemleri yapacaksın tıpkı .sehir ve blog taki gibi index sayfasına istek ayarlşarını buradan yaparsın 
-            index.Deger5 = _databaseContext.Blogs.Take(10).ToList();
+            index.Deger5 = _databaseContext.Blogs.Take(8).ToList();
 
             return View(index);
         }
@@ -84,7 +84,7 @@ namespace SeyahatSitesi.Controllers
         [HttpGet]
         public PartialViewResult Partial1()
         {
-            //int maxsimum = _databaseContext.Blogs.Count();
+            //int maxsimum = _databaseContext.Blogs.Count(); 
             partial.Deger4 = _databaseContext.Blogs.OrderByDescending(x => x.Id).Take(2).ToList();
             //partial.Deger5 = _databaseContext.Blogs.ToList();
             return PartialView(partial);
