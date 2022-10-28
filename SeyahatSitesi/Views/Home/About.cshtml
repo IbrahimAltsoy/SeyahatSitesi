@@ -1,0 +1,24 @@
+﻿@using SeyahatSitesi.Models.Class;
+@model List<About>
+@{
+    ViewData["Title"] = "Hakkimizda";
+}
+@*<h1>@ViewData["Title"]</h1>*@
+
+<div class="content">
+	<div class="wrap">
+	 <div class="about">
+		<h3 style="text-align:center">About</h3>
+			
+			<img src="~/assets/images/about_banner.jpg" alt="" />
+		
+		@foreach(var x in Model){
+				
+				
+			<p>@x.Abouts</p>
+		}
+		
+	
+	</div>
+	</div>
+	</div>

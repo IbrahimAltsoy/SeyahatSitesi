@@ -1,0 +1,40 @@
+﻿@model SeyahatSitesi.Models.Class.BlogYorum
+<div class="con-bot">
+    
+
+    @{
+        int a = 0;
+    }
+    @foreach (var x in Model.Deger5)
+    {
+        
+        a++;
+        var ss = "left";
+        if (a == 3)
+        {
+            ss = "right";
+        }
+        else if (a > 3)
+        {
+            break;
+        }
+
+        <div class="@ss">
+            <div class="bot-left">
+                <img src="~/assets/images/@x.BlogImage" alt="" />
+            </div>
+            <div class="left-text">
+                <h4>@x.Baslik</h4>
+                <span class="doller">@x.DateTime.ToString("dd:MM:yyyy")</span>
+                <p>@x.Text.Substring(0, 80)...</p>
+                <p><a href="/Home/Blog/@x.Id"><span class="read">Devamını Oku >></span></a></p>
+            </div>
+        </div>
+    }
+    
+    
+   
+   
+   
+    <div class="clear"></div>
+</div>
