@@ -89,7 +89,13 @@ namespace SeyahatSitesi.Controllers
             //partial.Deger5 = _databaseContext.Blogs.ToList();
             return PartialView(partial);
         }
-
+        BlogYorum partial2 = new BlogYorum();
+        [HttpGet]
+        public PartialViewResult Partial2()
+        {
+            partial2.Deger4=_databaseContext.Blogs.OrderBy(x => x.Id).Take(3).ToList();
+            return PartialView(partial2);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
