@@ -1,0 +1,31 @@
+﻿@model SeyahatSitesi.Models.Class.Blog
+@{
+    ViewData["Title"] = "YeniBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Blog Ekleme</h1>
+<br /> <br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=> x.Baslik)
+    @*@Html.TextBoxFor(x=>x.Baslik)*@
+    @Html.TextBoxFor(x=>x.Baslik, new{@class="form-control"}) 
+  <br />
+  @Html.LabelFor(x=>x.DateTime)
+    @Html.TextBoxFor(x=>x.DateTime, new{@class="form-control"})
+  <br />
+  @Html.LabelFor(x=>x.BlogImage)
+    @Html.TextBoxFor(x=>x.BlogImage, new{@class="form-control"})
+  <br />
+  @Html.LabelFor(x=>x.Text)
+    @Html.TextAreaFor(x=>x.Text, new{@class="form-control"})
+    <br />
+   @* @Html.Label("Yeni Blog:")*@
+    <button class="btn btn-primary">Kaydet</button>
+
+
+
+
+
+</form>
+
