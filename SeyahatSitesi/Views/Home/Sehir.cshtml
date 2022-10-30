@@ -49,62 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 				}
 				
-				@*@foreach(var x in Model.Deger1)
-				{
-					
-
-					if (x.Baslik == "Diyarbakır Surları")
-					{
-						<div class="single-grid">
-							<img src="~/assets1/images/diyarbakir.jpg" alt="" />
-							<br /><br />
-							<a href="/Home/Blog/@x.Id">@x.Baslik</a>
-							<p>@x.Text.Substring(0,250)</p>
-							<p><a href="/Home/Blog/@x.Id">   @x.Baslik<span class="read" style="margin-left:20px">   Devamını Oku >></span></a></p>
-						</div>
-					}
-					else if (x.Baslik == "Adana")
-					{
-						<div class="single-grid">
-							<img src="~/assets1/images/adana.jpg" alt="" />
-							<br /><br />
-							<a href="/Home/Blog/@x.Id">@x.Baslik</a>
-							<p>
-								@x.Text.Substring(0,250)
-							</p>
-							<p><a href="/Home/Blog/@x.Id">   @x.Baslik<span class="read" style="margin-left:20px">   Devamını Oku >></span></a></p>
-						</div>
-
-					}
-					else if (x.Baslik == "Mardin")
-					{
-						<div class="single-grid">
-							<img src="~/assets1/images/mardin.jpg" alt="" />
-							<br /><br />
-							<a href="/Home/Blog/@x.Id">@x.Baslik</a>
-							<p>
-								@x.Text.Substring(0,250)
-							</p>
-							<p><a href="/Home/Blog/@x.Id">@x.Baslik<span class="read" style="margin-left:20px">   Devamını Oku >></span></a></p>
-						</div>
-
-					}
-					else
-					{
-						<div class="single-grid">
-							<img src="~/assets1/images/urfa.jpg" alt="" />
-							<br /><br />
-							<a href="/Home/Blog/@x.Id">@x.Baslik</a>
-							<p>
-								@x.Text.Substring(0,250)
-							</p>
-							<p><a href="/Home/Blog/@x.Id">   @x.Baslik<span class="read" style="margin-left:20px">   Devamını Oku >></span></a></p>
-						</div>
-
-					}
-
-
-				}*@
+				
 					
 				
 				
@@ -119,9 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="/Home/Blog/@x.Id">@x.Baslik</a></li>
 						}
 						
-						@*<li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-						<li><a href="#">Nunc dignissim risus consecu</a></li>
-						<li><a href="#">Cras ornare tristiqu</a></li>*@
+						
 					</ul>
 				</div>
 				<div class="comments">

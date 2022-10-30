@@ -59,6 +59,8 @@ namespace SeyahatSitesi.Controllers
             return View(by);
 
         }
+        
+        
         // bÜTÜN HATA BURADA EŞİTLENMEYE ÇALIŞILAN İD DE SAKLIDIR. İD LER BİRBİRİNE EŞİT OLMADIĞI İÇİN LİSTELEME YAPMIYOR YAPMADIĞI YERDEN DEĞERLERİ TAŞIMIYOR
         BlogYorum yor = new BlogYorum();
         [HttpGet]

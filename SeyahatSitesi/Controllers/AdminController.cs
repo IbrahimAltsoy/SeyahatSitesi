@@ -49,6 +49,30 @@ namespace SeyahatSitesi.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Blogsil(int id)
+        {
+            var sil = _databaseContext.Blogs.Find(id);
+            _databaseContext.Blogs.Remove(sil);
+            _databaseContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult BlogGetir(int id)
+        {
+            var getir = _databaseContext.Blogs.Find(id);
+            _databaseContext.Blogs.ToList();
+            return View("BlogGetir", getir);
+        }
+        public IActionResult BlogGuncelle(Blog u)
+        {
+            var blg = _databaseContext.Blogs.Find(u.Id);
+            blg.Text = u.Text;
+            blg.Baslik=u.Baslik;
+            blg.DateTime=u.DateTime;
+            blg.BlogImage=u.BlogImage;
+            _databaseContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
     }

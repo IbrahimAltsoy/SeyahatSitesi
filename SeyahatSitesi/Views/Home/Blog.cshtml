@@ -1,5 +1,6 @@
-﻿
-@model SeyahatSitesi.Models.Class.BlogYorum
+﻿@model SeyahatSitesi.Models.Class.BlogYorum
+
+
 @{
     ViewData["Title"] = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,97 +10,103 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
-	<link href="~/assets1/css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="~/assets1/css/style.css" rel='stylesheet' type='text/css' />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
-	/>
-	
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/assets1/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/assets1/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
 </head>
 <body>
-<!---header---->			
-<
+    <!---header---->
+    <
 
-<div class="single">
-	 <div class="container">
-		  <div class="col-md-8 single-main">				 
-			  <div class="single-grid">
-					
-					
-					
-					@foreach(var x in Model.Deger1){
-						<img src="~/assets/images/@x.BlogImage" alt="" />
-						
-						<p>@x.Baslik</p>
-						<p>@x.Text</p>
-					}
-					
-			  </div>
-				@foreach (var x in Model.Deger2)
-				{
-					@foreach(var y in Model.Deger1)
-					{
-						@if(x.Blogid==y.Id)
-						{
-							<ul class="comment-list">
-		  		  
-		  						<li><img src="~/assets1/images/avatar.png" class="img-responsive" alt="">
-						 
-		  						<div class="desc">
-						 
-							
-										<p>@x.User : @x.Commentss</p>
-							
-		  		   
-		  						</div>
-		  		  
-		  						</li>
-		  					</ul>
-						}
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
 
-					}
-				
-					
-				}
-				
-			  <div class="content-form">
-					 <h3>Yorumlar</h3>
-					<form>
-						<input type="text" placeholder="Kullanızı adı giriniz" required/>
-						<input type="text" placeholder="Email giriniz" required/>
-						
-						<textarea placeholder="Yorum"></textarea>
-						<input type="submit" value="Gönder"/>
-				   </form>
-						 </div>
-		  </div>
 
-			  <div class="col-md-4 side-content">
-				 <div class="recent">
-					 <h3>Son Gönderiler</h3>
-					 <ul>
-					 <li><a href="#">Aliquam tincidunt mauris</a></li>
-					 <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-					 <li><a href="#">Nunc dignissim risus consecu</a></li>
-					 <li><a href="#">Cras ornare tristiqu</a></li>
-					 </ul>
-				 </div>
-				 <div class="comments">
-					 <h3>Son Yorumlar</h3>
-					 <ul>
-					 <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-					 <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-					 <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-					 </ul>
-				 </div>
-				
-				
-			  </div>
-			 
-		  </div>
-	  </div>
+
+                    @foreach (var x in Model.Deger1)
+                    {
+                        <img src="~/assets/images/@x.BlogImage" alt="" />
+
+                        <p>@x.Baslik</p>
+                        <p>@x.Text</p>
+                    }
+
+                </div>
+                @foreach (var x in Model.Deger2)
+                {
+                    @foreach (var y in Model.Deger1)
+                    {
+                        @if (x.Blogid == y.Id)
+                        {
+                            <ul class="comment-list">
+
+                                <li>
+                                    <img src="~/assets1/images/avatar.png" class="img-responsive" alt="">
+
+                                    <div class="desc">
+
+
+                                        <p>@x.User : @x.Commentss</p>
+
+
+                                    </div>
+
+                                </li>
+                            </ul>
+                        }
+
+                    }
+
+
+                }
+
+              @*  // Partialview eklenecek buaraya Yorum yap kısmını partial viewle dolduracaz*@
+                <div class="content-form">
+                    <h3>Yorumlar</h3>
+                    <form>
+
+                        <input type="text" placeholder="Kullanızı adı giriniz" required />
+                        <input type="text" placeholder="Email giriniz" required />
+
+                        <textarea placeholder="Yorum"></textarea>
+                        <input type="text" placeholder="Id" required />
+                        <input type="submit" value="Gönder" />
+                    </form>
+                </div>
+               @* Buraya partialview eklenecek *@
+            </div>
+            
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Son Gönderiler</h3>
+                    <ul>
+                        <li><a href="#">Aliquam tincidunt mauris</a></li>
+                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                        <li><a href="#">Nunc dignissim risus consecu</a></li>
+                        <li><a href="#">Cras ornare tristiqu</a></li>
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>Son Yorumlar</h3>
+                    <ul>
+                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
