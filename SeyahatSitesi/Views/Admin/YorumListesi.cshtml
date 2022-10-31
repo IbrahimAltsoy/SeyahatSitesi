@@ -1,0 +1,32 @@
+﻿@using SeyahatSitesi.Models.Class
+@model List<Comment>
+@{
+    ViewData["Title"] = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yorumları getir</h1>
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>User</td>
+        <td>Email</td>
+        <td>Comment</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+        <td>Blog</td>
+    </tr>
+    @foreach(var x in Model)
+    {
+   @* Yanlışlıkla veri tabanından veriler sildin imajeler duruyor ger, yükle onları*@
+    <tr>
+        <td>@x.Id</td>
+        <td>@x.User</td>
+        <td>@x.Email</td>
+        <td>@x.Commentss</td>
+        <td><a href="/Admin/YorumSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YorumGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        <td>@x.Blogid<a href="/Home/Blog/@x.Blogid" style="margin-left:20px; text-decoration:none" class="btn btn-success">Git</a></td>
+    </tr>
+    }
+</table>

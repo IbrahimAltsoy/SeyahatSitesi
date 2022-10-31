@@ -73,7 +73,40 @@ namespace SeyahatSitesi.Controllers
             _databaseContext.SaveChanges();
             return RedirectToAction("Index");
         }
+        // Yorumları Listeleyeceğiz
+        public IActionResult YorumListesi()
+        {
+            var yorum = _databaseContext.Comments.ToList();
 
+            return View(yorum);
+        }
+        // Yorum silme işlemi
+        public IActionResult YorumSil(int id)
+        {
+            var sil = _databaseContext.Comments.Find(id);
+            _databaseContext.Comments.Remove(sil);
+            _databaseContext.SaveChanges();
 
+            return RedirectToAction("YorumListesi");
+        }
+        //Yorum Güncelleme işlemi
+        public IActionResult YorumGetir(int id)
+        {
+            var getir = _databaseContext.Comments.Find(id);
+            _databaseContext.Comments.ToList();
+            return View("YorumGetir", getir);
+        }
+        public IActionResult YorumGuncelle(Comment u)
+        {
+            var blg = _databaseContext.Comments.Find(u.Id);
+            blg.Id = u.Id;
+            blg.User = u.User;
+            blg.Email = u.Email;
+            blg.Commentss = u.Commentss;
+            blg.Blogid = u.Blogid;
+
+            _databaseContext.SaveChanges();
+            return RedirectToAction("YorumListesi");
+        }
     }
 }

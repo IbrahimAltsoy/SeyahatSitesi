@@ -1,0 +1,30 @@
+﻿@model SeyahatSitesi.Models.Class.Comment
+@{
+    ViewData["Title"] = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yorum Güncelleme Sayfasına Hoşgeldiniz</h1>
+<br />
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id)
+    @Html.TextBoxFor(x=>x.Id, new{@class="form-control",@readonly="readonly"})
+    <br />
+    @Html.LabelFor(x=> x.User)
+    @*@Html.TextBoxFor(x=>x.Baslik)*@
+    @Html.TextBoxFor(x=>x.User, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Email)
+    @Html.TextBoxFor(x=>x.Email, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Commentss)
+    @Html.TextAreaFor(x=>x.Commentss,3,1, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Blogid)
+    @Html.TextBoxFor(x=>x.Blogid, new{@class="form-control"})
+    <br />
+    @* @Html.Label("Yeni Blog:")*@
+    <button class="btn btn-success">Blog Güncelle</button>
+    <br /><br />
+}

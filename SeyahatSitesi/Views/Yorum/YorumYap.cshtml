@@ -1,0 +1,15 @@
+﻿@*@model SeyahatSitesi.Models.Class.Comment
+<div class="content-form">
+    <h3>Yorumlar</h3>
+    <form method="post">
+
+        <input type="text" placeholder="Kullanızı adı giriniz" name="User" required />
+        <input type="text" placeholder="Email giriniz" name="Email" required />
+
+        <textarea placeholder="Yorum" name="Commentss"></textarea>
+        <input type="text" placeholder="Id" name="BlogId" required />
+        <input type="submit" value="Gönder" />
+    </form>
+</div>*@
+
+@*Proje de ortalarında blog için controlelr eklenmediği ve blogun controllerini gomecontroller üzerinden yapıldı. Bu durum yanlıştı sonradan baş ağrıttı, ağrıttı yer de yeni yorum ekleme durumunun gerçekleştirmemizi engelledi , buna alternatif olrak Yorumcontrolleri ve partial view ler eklense de ççalıştıralamadı, yapılması planlanıp yapılamayan tek şey budur. Çözüm üretmeyi bekliyor*@
