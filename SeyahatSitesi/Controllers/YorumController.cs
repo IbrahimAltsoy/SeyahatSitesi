@@ -19,11 +19,11 @@ namespace SeyahatSitesi.Controllers
             var deger = _databaseContext.Blogs.ToList();
             return View(deger);
         }
-        //[HttpGet]
-        //public PartialViewResult YorumYap()
-        //{
-        //    return PartialView();
-        //}
+        [HttpGet]
+        public PartialViewResult YorumYap()
+        {
+            return PartialView();
+        }
         //[HttpPost]
         //public PartialViewResult YorumYap(BlogYorum c)
         //{
@@ -35,7 +35,7 @@ namespace SeyahatSitesi.Controllers
     //    public async Task<PartialViewResult> YorumYap(
     //[Bind("User,Email,Commentss,BlogId")] BlogYorum p)
     //    {
-    //       _databaseContext.Comments.Add(_databaseContext.Comments.FirstOrDefault());
+    //        _databaseContext.Comments.Add(_databaseContext.Comments.FirstOrDefault());
     //        await _databaseContext.SaveChangesAsync();
     //        return PartialView(p);
     //    }

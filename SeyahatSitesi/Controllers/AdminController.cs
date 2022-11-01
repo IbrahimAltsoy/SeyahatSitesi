@@ -5,7 +5,7 @@ using SeyahatSitesi.Models.Class;
 
 namespace SeyahatSitesi.Controllers
 {
-    // Autorize ekledik sayfaya admi naneline girmeye çalıştığımız vakit admine gitmiyor, direk login sayfasına atıyor. 
+    // Autorize ekledik sayfaya admin paneline girmeye çalıştığımız vakit admine gitmiyor, direk login sayfasına atıyor. 
     [Authorize]
     public class AdminController : Controller
 

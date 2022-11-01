@@ -23,12 +23,12 @@ namespace SeyahatSitesi.Controllers
         }
         public IActionResult Login()
         {
-            ClaimsPrincipal claimuser = HttpContext.User;
-            if (claimuser.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Admin");
-                // satır 60 admin yerine login yazmayı dene bakalım ne oluyor 
-            }
+            //ClaimsPrincipal claimuser = HttpContext.User;
+            //if (claimuser.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Index", "Admin");
+            //    // satır 60 admin yerine login yazmayı dene bakalım ne oluyor 
+            //}
             return View();
         }
         //[HttpPost]
@@ -66,14 +66,20 @@ namespace SeyahatSitesi.Controllers
                 return RedirectToAction("Index", "Admin");
 
             }
-            //else
-            //{ // 3.50 murat yücedağ 
-            //    return RedirectToAction("Login", "Login");
-            // bu kodun yerine aşağıdakini dene bakalım ne olcak
-            //}
-            ViewData["ValidateMessage"] = "Kullanıcı bulunamadı tekrar deneyiniz";
-            return View();
-            
+            else
+            { // 3.50 murat yücedağ 
+                return RedirectToAction("Login", "Login");
+                //bu kodun yerine aşağıdakini dene bakalım ne olcak
+            }
+            //ViewData["ValidateMessage"] = "Kullanıcı bulunamadı tekrar deneyiniz";
+            //return View();
+
+        }
+        public async Task<ActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Login");
+           
         }
 
     }
