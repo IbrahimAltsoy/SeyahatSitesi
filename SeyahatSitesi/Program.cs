@@ -1,4 +1,4 @@
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using SeyahatSitesi.Models.Class;
 
@@ -8,7 +8,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Buraya baðlantý oluþturacaz=x
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie( option =>
+{
+    option.LoginPath = "/Login/Login";
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+}
+    );
+
+
+
+
 var app = builder.Build();
+// Burdan baþlar kod =x
+app.UseAuthentication();
+// Buraya kadar =y 3.20 e dikkat et 
 
 
 // Configure the HTTP request pipeline.
@@ -22,7 +36,14 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+
+
+
 app.UseRouting();
+
+// buraya da eklenecek =x
+
 
 app.UseAuthorization();
 

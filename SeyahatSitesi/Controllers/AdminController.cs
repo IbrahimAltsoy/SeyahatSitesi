@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SeyahatSitesi.Models.Class;
 
 namespace SeyahatSitesi.Controllers
 {
+    // Autorize ekledik sayfaya admi naneline girmeye çalıştığımız vakit admine gitmiyor, direk login sayfasına atıyor. 
+    [Authorize]
     public class AdminController : Controller
 
     {
@@ -15,6 +18,7 @@ namespace SeyahatSitesi.Controllers
             _logger = logger;
             _databaseContext = databaseContext;
         }
+        
         [HttpGet]
         public IActionResult Index()
         {
