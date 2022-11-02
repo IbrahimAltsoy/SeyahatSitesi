@@ -1,0 +1,31 @@
+﻿@model SeyahatSitesi.Models.Class.Contact
+@{
+    Layout = null;
+}
+
+
+<h1>İletişim Sayfasına Hoşgeldiniz</h1>
+<br />
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=> x.User)
+    @*@Html.TextBoxFor(x=>x.Baslik)*@
+    @Html.TextBoxFor(x=>x.User, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Email)
+    @Html.TextBoxFor(x=>x.Email, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Subject)
+    @Html.TextBoxFor(x=>x.Subject, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Messaje)
+    @Html.TextAreaFor(x=>x.Messaje, new{@class="form-control"})
+    <br />
+    @* @Html.Label("Yeni Blog:")*@
+    <button class="btn btn-primary">Gonder</button>
+
+
+
+
+
+</form>
