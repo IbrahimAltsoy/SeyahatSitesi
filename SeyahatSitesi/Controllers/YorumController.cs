@@ -14,7 +14,7 @@ namespace SeyahatSitesi.Controllers
             _databaseContext = databaseContext;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index() // Burayı bi şeyler deneme mksatlı yapıldı. Denenmek istenen durum gerçekleştirelemdi, durum ise userin açılan Blog iewine yorum yapmasını sağlamaktı. Çözümü var Homecontrolerde yapılan işlemleri buraya taşıyacak olsak yüksek oranda çalışacak fakat bu durum işi başa sarmakla aynı şey olacaktı, projenin eksik kalan önemli kısmı olarak değerlendirdik. Uzman birinden destek alınarak kısa biir yoldan halledilecek sanırım.
         {
             var deger = _databaseContext.Blogs.ToList();
             return View(deger);

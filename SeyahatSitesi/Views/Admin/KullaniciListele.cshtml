@@ -1,0 +1,37 @@
+﻿@using SeyahatSitesi.Models.Class
+@model List<Contact>
+@{
+    ViewData["Title"] = "KullaniciGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h1>Kullanıcı Listele</h1>
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>User</td>
+        <td>Email</td>
+        <td>Subject</td>
+        <td>Messaje</td>
+
+        <td>Sil</td>
+        <td>Güncelle</td>
+       
+    </tr>
+    @foreach (var x in Model)
+    {
+        @* Yanlışlıkla veri tabanından veriler sildin imajeler duruyor ger, yükle onları*@
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.User</td>
+            <td>@x.Email</td>
+            <td>@x.Subject</td>
+            <td>@x.Messaje</td>
+            <td><a href="/Admin/KullaniciSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/KullaniciGetirr/@x.Id" class="btn btn-warning">Güncelle</a></td>
+            
+        </tr>
+    }
+</table>

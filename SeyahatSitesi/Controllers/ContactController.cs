@@ -16,12 +16,12 @@ namespace SeyahatSitesi.Controllers
             _logger = logger;
             _databaseContext = databaseContext;
         }
-        public IActionResult Index()
+        public IActionResult Index() // Bu alanı kendim ekledim ve çok güzel çalışıyor, iletişim view ioluşturduk devamını aşağıdaki partiallerle enimesaj atmasını sağlattırdık
         {
             return View();
         }
         [HttpGet]
-        public PartialViewResult YeniMesaj()
+        public PartialViewResult YeniMesaj() // Bu kod ile aşağıdaki kod aynı aşağıdaki kod ile view oluşturduk ve Contact viewinde çağırdık  ve çok güzel çalışıyor, sayfa ile iletişime geçmek isteyen biri contact viewinde verilerini girerek iletişim kurrmasını sağladık. 
         {
             return PartialView();
         }
