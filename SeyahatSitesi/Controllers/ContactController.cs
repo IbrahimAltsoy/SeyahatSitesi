@@ -32,12 +32,11 @@ namespace SeyahatSitesi.Controllers
         {
             _databaseContext.Contacts.Add(p);
             await _databaseContext.SaveChangesAsync();
-            return PartialViewResult(nameof(Index));
+            return PartialView();
+           
         }
 
-        private PartialViewResult PartialViewResult(string v)
-        {
-            throw new NotImplementedException();
-        }
+
+       
     }
 }

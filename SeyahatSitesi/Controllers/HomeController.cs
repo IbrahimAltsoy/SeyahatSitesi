@@ -98,6 +98,25 @@ namespace SeyahatSitesi.Controllers
             partial2.Deger4=_databaseContext.Blogs.OrderBy(x => x.Id).Take(3).ToList();
             return PartialView(partial2);
         }
+        // buraya yorum yapı eklemeye çalıştım olmadı çalışmadı malesef
+    //    [HttpGet]
+    //    public PartialViewResult YorumYap()
+    //    {
+    //        return PartialView();
+    //    }
+    //    
+    //    [HttpPost]
+    //    public async Task<PartialViewResult> YorumYap(
+    //[Bind("User,Email,Commentss,Blogid")] BlogYorum p)
+    //    {
+    //        object a = p.Deger2;
+          
+    //        _databaseContext.Comments.Add();
+    //        //_databaseContext.Comments.Add((Comment)p.Deger2);
+    //        await _databaseContext.SaveChangesAsync();
+    //        return PartialView();
+
+    //    }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
