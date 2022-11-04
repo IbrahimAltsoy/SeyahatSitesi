@@ -16,7 +16,7 @@ namespace SeyahatSitesi.Controllers
             _logger = logger;
             _databaseContext = databaseContext;
         }
-        public IActionResult Index() //DİKKAT!!!!!!! Sanırım Problem burada yatıyor, problem de şu ındex metodunda partial ile ilgili işlem yapacağız.
+        public IActionResult Index() //DİKKAT!!!!!!! Sanırım Problem burada yatıyor, problem de şu ındex metodunda partial ile ilgili işlem yapacağız. Buraya dikkat et Dikkat !!! PartialViewi yani YeniMesaj Viewini tek başına çalıştırdığımda çalışıyor veritababnına veri ekliyor fakat bunu ındex üzerinden çağırdığımda ekleme yapmıyor hata da vermiyor boş dönüyor
         {
             return View();
         }
