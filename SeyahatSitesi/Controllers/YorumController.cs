@@ -19,21 +19,21 @@ namespace SeyahatSitesi.Controllers
             var deger = _databaseContext.Blogs.ToList();
             return View(deger);
         }
-         // Blog sayfası altında YORUM YAPMAYA ÇALIŞTIK BECEREMEDİK SAYFANIN TEK EKSİK YÖNÜ BU KALDI
-    //    [HttpGet]
-    //    public PartialViewResult YorumYap()
-    //    {
-    //        return PartialView();
-    //    }
-    //    [HttpPost]
-    //    public async Task<PartialViewResult> YorumYap(
-    //[Bind("User,Email,Commentss,Blogid")] BlogYorum p)
-    //    {
-    //        _databaseContext.Comments.Add((Comment)p.Deger2);
-    //        await _databaseContext.SaveChangesAsync();
-    //        return PartialView();
+        // Blog sayfası altında YORUM YAPMAYA ÇALIŞTIK BECEREMEDİK SAYFANIN TEK EKSİK YÖNÜ BU KALDI
+        [HttpGet]
+        public PartialViewResult YorumYap()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public async Task<PartialViewResult> YorumYap(
+    [Bind("User,Email,Commentss,Blogid")] BlogYorum p)
+        {
+            _databaseContext.Comments.Add((Comment)p.Deger2);
+            await _databaseContext.SaveChangesAsync();
+            return PartialView();
 
-    //    }
+        }
 
     }
 }

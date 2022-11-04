@@ -1,4 +1,6 @@
 ﻿@model SeyahatSitesi.Models.Class.Contact
+@*@using SeyahatSitesi.Models.Class;
+@model List<Contact>*@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,6 +28,7 @@
                 </p>
             </div>
             <partial name="~/Views/Contact/YeniMesaj.cshtml" />
+            @* @await Html.PartialAsync("~/Views/Contact/YeniMesaj.cshtml") *@
            @* <div class="form">
                                
                 <form class="cmxform" id="contactForm" method="post">

@@ -16,7 +16,7 @@ namespace SeyahatSitesi.Controllers
             _logger = logger;
             _databaseContext = databaseContext;
         }
-        public IActionResult Index() // Bu alanı kendim ekledim ve çok güzel çalışıyor, iletişim view ioluşturduk devamını aşağıdaki partiallerle enimesaj atmasını sağlattırdık
+        public IActionResult Index() //DİKKAT!!!!!!! Sanırım Problem burada yatıyor, problem de şu ındex metodunda partial ile ilgili işlem yapacağız.
         {
             return View();
         }

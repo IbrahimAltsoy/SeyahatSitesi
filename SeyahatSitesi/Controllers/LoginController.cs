@@ -4,7 +4,7 @@ using System.Security.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
-
+// yukardaki kütüphaneler login işlemleri için oluşturulmuştur. akabinde devamı aşağıdaki kodlarda mevcuttur. 45 satırda başlıyor, 75 satıra kadar devam ediyor.
 namespace SeyahatSitesi.Controllers
 {
     public class LoginController : Controller
@@ -67,7 +67,7 @@ namespace SeyahatSitesi.Controllers
 
             }
             else
-            { // 3.50 murat yücedağ 
+            { 
                 return RedirectToAction("Login", "Login");
                 //bu kodun yerine aşağıdakini dene bakalım ne olcak
             }
@@ -75,7 +75,7 @@ namespace SeyahatSitesi.Controllers
             //return View();
 
         }
-        public async Task<ActionResult> LogOut()
+        public async Task<ActionResult> LogOut() // Çıkış yapma alanıdır, aşağıdaki kodlarla çıkış yapmaktayız.
         {
             await HttpContext.SignOutAsync();
             return RedirectToAction("Login", "Login");
