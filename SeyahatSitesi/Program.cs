@@ -22,7 +22,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 var app = builder.Build();
 // Burdan baþlar kod =x
 app.UseAuthentication();
-// Buraya kadar =y 3.20 e dikkat et 
+// Buraya kadar =y 
 
 
 // Configure the HTTP request pipeline.
