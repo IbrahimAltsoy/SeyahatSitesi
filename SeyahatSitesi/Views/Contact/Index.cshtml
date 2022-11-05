@@ -1,6 +1,7 @@
-﻿@model SeyahatSitesi.Models.Class.Contact
-@*@using SeyahatSitesi.Models.Class;
-@model List<Contact>*@
+﻿@*@model SeyahatSitesi.Models.Class.Contact
+*@
+@using SeyahatSitesi.Models.Class;
+@model List<Contact>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -27,7 +28,8 @@
                     gothica, quam nu
                 </p>
             </div>
-            <partial name="~/Views/Contact/YeniMesaj.cshtml" />
+            @*@Html.Action("YeniMesaj", "Home")*@
+            <partial name="YeniMesaj" />
             @* @await Html.PartialAsync("~/Views/Contact/YeniMesaj.cshtml") *@
            @* <div class="form">
                                

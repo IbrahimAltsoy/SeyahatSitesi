@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SeyahatSitesi.Models.Class;
 
-
 namespace SeyahatSitesi.Controllers
 {
     public class ContactController : Controller
@@ -20,7 +19,15 @@ namespace SeyahatSitesi.Controllers
         {
             return View();
         }
-        [HttpGet]
+        [HttpPost]
+        public async Task<IActionResult> IndexAsync(Contact p)
+        {
+            await _databaseContext.Contacts.AddAsync(p);
+            await _databaseContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+       /* [HttpGet]
         public PartialViewResult YeniMesaj() // Bu kod ile aşağıdaki kod aynı aşağıdaki kod ile view oluşturduk ve Contact viewinde çağırdık  ve çok güzel çalışıyor, sayfa ile iletişime geçmek isteyen biri contact viewinde verilerini girerek iletişim kurrmasını sağladık. 
         {
             return PartialView();
@@ -35,8 +42,8 @@ namespace SeyahatSitesi.Controllers
             return PartialView();
            
         }
+       */
 
 
-       
     }
 }
