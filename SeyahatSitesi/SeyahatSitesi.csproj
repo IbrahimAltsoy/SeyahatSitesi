@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.2.0" />
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="7.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
